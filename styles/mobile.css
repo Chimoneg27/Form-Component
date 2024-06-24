@@ -1,15 +1,15 @@
 *{
     padding: 0;
-    marin: 0;
+    margin: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --Red-c: hsl(0, 100%, 74%);
 }
 
 body {
     font-family: "Poppins", sans;
-    background-image: url('images/bg-intro-mobile.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: hsl(0, 100%, 74%);
 }
 
 .container {
@@ -17,6 +17,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--Red-c);
+  background-image: url('../images/bg-intro-mobile.png');
+  height: 100vh;
+  width: 100%;
 }
 
 #desc {
