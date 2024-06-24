@@ -6,4 +6,31 @@
 
 body {
     font-family: "Poppins", sans;
+    background-image: url('images/bg-intro-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: hsl(0, 100%, 74%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#desc {
+    padding: 0.35rem 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+#desc h1 {
+  color: white;
+  text-align: center;
+}
+
+#desc p {
+  color: white;
+  text-align: center;
 }
