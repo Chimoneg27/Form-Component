@@ -5,7 +5,11 @@
 }
 
 :root {
-    --Red-c: hsl(0, 100%, 74%);
+  --Red-c: hsl(0, 100%, 74%);
+  --Green: hsl(154, 59%, 51%);
+  --Blue: hsl(248, 32%, 49%);
+  --Dark-Blue: hsl(249, 10%, 26%);
+  --Grayish-Blue: hsl(246, 25%, 77%);
 }
 
 body {
@@ -16,17 +20,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: var(--Red-c);
   background-image: url('../images/bg-intro-mobile.png');
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 
 #desc {
-    padding: 0.35rem 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+  padding: 0.15rem 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 #desc h1 {
@@ -37,4 +40,29 @@ body {
 #desc p {
   color: white;
   text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  word-spacing: 0.25rem;
+}
+
+#form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#try {
+  font-weight: bold;
+}
+
+#form-section p {
+  width: 90%;
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+  text-align: center;
+  color: white;
+  background-color: var(--Blue);
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
 }
