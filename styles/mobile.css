@@ -24,6 +24,7 @@ body {
   background-image: url('../images/bg-intro-mobile.png');
   height: auto;
   width: 100%;
+  padding-bottom: 3.5rem;
 }
 
 #desc {
@@ -55,7 +56,7 @@ body {
   font-weight: bold;
 }
 
-#form-section p {
+#trial {
   width: 90%;
   padding: 1rem 1.5rem;
   font-size: 1.25rem;
@@ -65,4 +66,48 @@ body {
   margin-bottom: 1.5rem;
   border: none;
   border-radius: 0.5rem;
+}
+
+form {
+  width: 90%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.inputs {
+  padding: 1rem;
+  width: 90%;
+}
+
+.inputs::placeholder {
+  color: var(--Dark-Blue);
+  font-weight: bold;
+}
+
+#submitBtn {
+  padding: 1rem;
+  background-color: var(--Green);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  width: 90%;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+form p {
+  text-align: center;
+  color: var(--Grayish-Blue);
+  font-size: 0.85rem;
+  width: 90%;
+}
+
+#terms {
+  color: var(--Red-c);
+  font-weight: bold;
 }
