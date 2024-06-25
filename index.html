@@ -25,13 +25,21 @@
     <div id="form-section">
       <p id="trial"><span id="try">Try it free 7 days</span> then <br> $20/mo. thereafter</p>
   
-      <form>
-        <input class="inputs" type="text" id="fname" name="fname"  placeholder="First Name"><br>
-        <input class="inputs" type="text" id="lname" name="fname"  placeholder="Last Name"><br>
-        <input class="inputs" type="email" id="email" name="fname"  placeholder="Email"><br>
-        <input class="inputs" type="password" id="password" name="fname"  placeholder="Password"><br>
+      <form name='theForm'>
+        <input class="inputs" type="text" id="fname" name="fname"  placeholder="First Name">
+        <span class='errorMsg' id="nameErr"></span>
+        <br>
+        <input class="inputs" type="text" id="lname" name="lname"  placeholder="Last Name">
+        <span class='errorMsg' id="lastErr"></span>
+        <br>
+        <input class="inputs" type="email" id="email" name="email"  placeholder="Email">
+        <span class='errorMsg' id="emialErr"></span>
+        <br>
+        <input class="inputs" type="password" id="password" name="password"  placeholder="Password">
+        <span class='errorMsg' id="passwordErr"></span>
+        <br>
     
-        <button id="submitBtn">CLAIM YOUR FREE TRIAL</button> 
+        <button id="submitBtn" type="submit">CLAIM YOUR FREE TRIAL</button> 
     
         <p>By clicking the button, you are agreeing to our <span id="terms">Terms and Services</span></p>
       </form>
