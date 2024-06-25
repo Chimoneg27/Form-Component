@@ -83,6 +83,10 @@ form {
   width: 90%;
 }
 
+.inputs:invalid {
+  border: 4px solid red;
+}
+
 .inputs::placeholder {
   color: var(--Dark-Blue);
   font-weight: bold;
@@ -97,6 +101,7 @@ form {
   width: 90%;
   padding: 1rem;
   font-size: 1rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
