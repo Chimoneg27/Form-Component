@@ -11,6 +11,8 @@ formBtn.addEventListener('click', (event) => {
   validateName(firstName.value, lastName.value)
 
   validateEmail(email.value)
+
+  passwordVal(password.value)
 })
 
 const validateName = (firstName, lastName) => {
@@ -43,5 +45,16 @@ const validateEmail = (emailVal) => {
   } else {
       emailSpan.innerHTML = 'Looks like this is not an email'
       // errorIcon.style.display = 'block'
+  }
+}
+
+const passwordVal = (password) => {
+  const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+  let passwordSpan = document.getElementById('passwordErr')
+
+  if (!passwordPattern.test(password)) {
+    passwordSpan.innerHTML = 'Password must not be empty'
+  } else {
+    passwordSpan.innerHTML = ''
   }
 }

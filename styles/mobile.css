@@ -92,6 +92,16 @@ form {
   font-weight: bold;
 }
 
+.errorMsg {
+  color: var(--Red-c);
+  font-weight: bold;
+  font-size: 0.85rem;
+  width: 90%;
+  font-style: italic;
+  margin-top: 8px;
+  text-align: right;
+}
+
 #submitBtn {
   padding: 1rem;
   background-color: var(--Green);
