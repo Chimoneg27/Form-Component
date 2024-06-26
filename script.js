@@ -4,6 +4,7 @@ const lastName = document.getElementById('lname')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
+const errorIcon = document.getElementsByClassName('errorIcon')
 
 formBtn.addEventListener('click', (event) => {
   event.preventDefault()
@@ -22,14 +23,18 @@ const validateName = (firstName, lastName) => {
 
   if (!namePattern.test(firstName)) {
     nameSpan.innerHTML = 'First name cannot be empty'
+    errorIcon[0].style.display = 'block'
   } else {
     nameSpan.innerHTML = ''
+    errorIcon[0].style.display = 'none'
   }
 
   if (!namePattern.test(lastName)) {
     lastNameSpan.innerHTML = 'Last name cannot be empty'
+    errorIcon[1].style.display = 'block'
   } else {
     lastNameSpan.innerHTML = ''
+    errorIcon[1].style.display = 'none'
   }
 }
 
@@ -42,9 +47,10 @@ const validateEmail = (emailVal) => {
   if(matchRegex(emailVal)) {
       emailSpan.innerHTML = ''
       email.value = ''
+      errorIcon[2].style.display = 'none'
   } else {
       emailSpan.innerHTML = 'Looks like this is not an email'
-      // errorIcon.style.display = 'block'
+      errorIcon[2].style.display = 'block'
   }
 }
 
@@ -54,7 +60,9 @@ const passwordVal = (password) => {
 
   if (!passwordPattern.test(password)) {
     passwordSpan.innerHTML = 'Password must not be empty'
+    errorIcon[3].style.display = 'block'
   } else {
     passwordSpan.innerHTML = ''
+    errorIcon[3].style.display = 'none'
   }
 }
