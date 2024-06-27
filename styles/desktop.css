@@ -40,4 +40,9 @@
     .errorIcon {
         margin-right: -25rem;
     }
+
+    #submitBtn:hover {
+        opacity: 0.65;
+        cursor: pointer;
+    }
 }
