@@ -31,4 +31,12 @@
         word-spacing: 0.25rem;
         font-size: 2.5rem;
     }
+
+    #form p {
+        width: 60%;
+    }
+
+    .errorIcon {
+        margin-right: -25rem;
+    }
 }
