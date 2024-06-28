@@ -3,17 +3,23 @@ const firstName = document.getElementById('fname')
 const lastName = document.getElementById('lname')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
-let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
+let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const errorIcon = document.getElementsByClassName('errorIcon')
+
+import { firebase } from './firebase.js'
+const pushFunc = firebase.push
+const formComponentDB = firebase.formComponentDB
+
+let formObj = {
+}
 
 formBtn.addEventListener('click', (event) => {
   event.preventDefault()
 
   validateName(firstName.value, lastName.value)
-
   validateEmail(email.value)
-
   passwordVal(password.value)
+  pushFunc(formComponentDB, formObj)
 })
 
 const validateName = (firstName, lastName) => {
@@ -26,6 +32,7 @@ const validateName = (firstName, lastName) => {
     errorIcon[0].style.display = 'block'
   } else {
     nameSpan.innerHTML = ''
+    formObj.firstName = firstName
     errorIcon[0].style.display = 'none'
   }
 
@@ -34,6 +41,7 @@ const validateName = (firstName, lastName) => {
     errorIcon[1].style.display = 'block'
   } else {
     lastNameSpan.innerHTML = ''
+    formObj.lastName = lastName
     errorIcon[1].style.display = 'none'
   }
 }
@@ -47,6 +55,7 @@ const validateEmail = (emailVal) => {
   if(matchRegex(emailVal)) {
       emailSpan.innerHTML = ''
       email.value = ''
+      formObj.email = emailVal
       errorIcon[2].style.display = 'none'
   } else {
       emailSpan.innerHTML = 'Looks like this is not an email'
@@ -62,6 +71,7 @@ const passwordVal = (password) => {
     passwordSpan.innerHTML = 'Password must not be empty'
     errorIcon[3].style.display = 'block'
   } else {
+    formObj.password = password
     passwordSpan.innerHTML = ''
     errorIcon[3].style.display = 'none'
   }
