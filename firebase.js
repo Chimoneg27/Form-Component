@@ -8,3 +8,10 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const formComponentDB = ref(database, 'formComponent')
+
+const firebase = {
+    push,
+    formComponentDB
+}
+
+export { firebase }
