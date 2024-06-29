@@ -19,7 +19,8 @@ formBtn.addEventListener('click', (event) => {
   validateName(firstName.value, lastName.value)
   validateEmail(email.value)
   passwordVal(password.value)
-  pushFunc(formComponentDB, formObj)
+  // pushFunc(formComponentDB, formObj)
+  checkForm(formObj)
 })
 
 const validateName = (firstName, lastName) => {
@@ -74,5 +75,13 @@ const passwordVal = (password) => {
     formObj.password = password
     passwordSpan.innerHTML = ''
     errorIcon[3].style.display = 'none'
+  }
+}
+
+const checkForm = (obj) => {
+  if(!obj.hasOwnProperty('firstName') || !obj.hasOwnProperty('lastName') || !obj.hasOwnProperty('email') || !obj.hasOwnProperty('password')) {
+    console.log('Form is missing a value')
+  } else {
+    pushFunc(formComponentDB, obj)
   }
 }
